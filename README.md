@@ -23,7 +23,7 @@
 1. 构建成功后，可以运行以下命令来启动 Clash 代理容器：
 
    ```bash
-   docker run -d --name clash-proxy -p 7890:7890 -p 7891:7891 <镜像名称>
+   docker run -d --name clash-proxy -p 7890:7890 -p 9090:9090 <镜像名称>
    ```
 
    将 `<镜像名称>` 替换为之前构建的 Clash Docker 镜像的名称。
