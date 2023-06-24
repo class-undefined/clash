@@ -1,1 +1,1 @@
-docker run -d --name clash-proxy -p 1234:7890 -p 9091:9090 clash-proxy
+docker run -d --name clash-proxy -p 7890:7890 -p 7890:9090 clash-proxy
