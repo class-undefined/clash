@@ -6,9 +6,6 @@ if [ -z "$subscribe" ]; then
     exit 1
 fi
 mkdir -p res
-if [ ! -e res/Centos-7.repo ]; then
-    wget -O res/Centos-7.repo http://mirrors.aliyun.com/repo/Centos-7.repo 
-fi
 if [ ! -e res/clash-linux-amd64-v1.16.gz ]; then
     wget -O res/clash-linux-amd64-v1.16.gz https://github.com/Dreamacro/clash/releases/download/v1.16.0/clash-linux-amd64-v1.16.0.gz
 fi
