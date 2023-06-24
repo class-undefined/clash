@@ -2,15 +2,18 @@ apiVersion: v1
 kind: Service
 metadata:
   name: http-proxy-svc
+  namespace: clash
 spec:
   selector:
     app: clash
   ports:
   # https_proxy / http_proxy
   - protocol: TCP
+    name: http
     port: 7890
     targetPort: 7890
   # external-controller address
   - protocol: TCP
+    name: controller
     port: 9090
     targetPort: 9090

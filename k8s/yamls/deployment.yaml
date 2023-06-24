@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: clash-proxy
+  namespace: clash
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+       app: clash
+  template:
+    metadata:
+      labels:
+        app: clash
+    spec:
+      containers:
+        - name: clash-proxy
+          image: clash-proxy:latest
+          imagePullPolicy: Never # k8s不能直接使用本地镜像, 解决方案: https://medium.com/swlh/how-to-run-locally-built-docker-images-in-kubernetes-b28fbc32cc1d
+          ports:
+            - containerPort: 7890
+            - containerPort: 7891
+            - containerPort: 9090
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: "1"
+            requests:
+              memory: 256Mi
+              cpu: "0.2"
